@@ -1,0 +1,3 @@
+<app-c1 [c1Data]="homeData"></app-c1>
+<app-c2 (childMsg)='getMsg($event)' (newChildMsg)='clearMsg($event)'></app-c2><br>
+{{myMsg.fName}} {{myMsg.lName}}
