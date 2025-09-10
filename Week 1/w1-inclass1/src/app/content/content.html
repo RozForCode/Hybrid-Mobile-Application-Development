@@ -1,6 +1,10 @@
-<p>Student Name: {{ currStudent.sname | uppercase }}</p> 
+
+<input [(ngModel)]="capitalizedText"/>
+<p>Uppercase Pipe output: {{ capitalizedText | uppercase }}</p> 
 
 <h3 on-mouseover="mouse()"
 (mouseout)="mouse2()">Data Binding Demonstration
 </h3>
 <h2>City : {{this.city}}</h2>
+
+<p>{{inputMsgComingFromParent}}</p>

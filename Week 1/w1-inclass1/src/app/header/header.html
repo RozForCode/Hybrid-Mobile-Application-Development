@@ -1,5 +1,11 @@
 <!-- myFirstApp: header component / change --> 
+
+
 <h1>Angular App / By: {{ currStudent.sname }}</h1> 
 <h2>Student / Id: {{ currStudent.sid }}</h2> 
 <h3>Student / Campus: {{ currStudent.scampus }}</h3> 
 <h4>Student / Email: {{ currStudent.sEmail }}</h4> 
+
+<input [(ngModel)]="name"/>
+<button (click)="sendMsgToParent()">Send to Parent or Clear from parent</button>
+<p>Hello, {{name}}!</p>

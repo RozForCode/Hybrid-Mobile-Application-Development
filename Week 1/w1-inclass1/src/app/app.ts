@@ -13,12 +13,21 @@
 import { Component } from '@angular/core'; 
 import { HeaderComponent } from './header/header'; 
 import { ContentComponent} from './content/content';
+import { FormsModule } from '@angular/forms';
  
 @Component({ 
   selector: 'app-root', 
   standalone: true, 
-  imports: [HeaderComponent, ContentComponent], 
+  imports: [HeaderComponent, ContentComponent, FormsModule], 
   templateUrl: './app.html', 
 }) 
-export class App {} 
+export class App {
+  msgReceivedFromChild: string = "";
+
+  getMsgFromChild($event: string){
+    this.msgReceivedFromChild = $event;
+  }
+
+  string: string = "";
+} 
   

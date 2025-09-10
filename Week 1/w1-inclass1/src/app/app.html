@@ -1,3 +1,11 @@
-<app-header></app-header> 
-<app-content></app-content> 
+<app-header (msgToSendToParent)="getMsgFromChild($event)"></app-header> 
+
+<input [(ngModel)]="string" placeholder="Type something to send to child component"/>
+<br>
+<br>
+
+<app-content [inputMsgComingFromParent]="string"></app-content>
+
 <p>Welcome to your Angular app!</p> 
+
+<p>{{msgReceivedFromChild}}</p>

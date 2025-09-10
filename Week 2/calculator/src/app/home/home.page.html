@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>My First App</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  
+  <ion-item>
+    <ion-label position="stacked">Number1</ion-label>
+    <ion-input [(ngModel)]="number1" placeholder="Number 1"></ion-input>
+
+    <ion-label position="stacked">Number2</ion-label>
+    <ion-input [(ngModel)]="number2" placeholder="Number 2"></ion-input>
+  </ion-item>
+  
+  <ion-button expand="block" (click)="calculate1()">
+    Add
+  </ion-button>
+  <ion-button expand="block" (click)="calculate2()">
+    Substract
+  </ion-button>
+  <ion-button expand="block" (click)="calculate3()">
+    Multiply
+  </ion-button>
+  <ion-button expand="block" (click)="calculate4()">
+    Divide
+  </ion-button>
+  <ion-button expand="block" (click)="calculate5()">
+    All
+  </ion-button>
+  
+  <ion-card *ngIf="result">
+    <ion-card-content>
+      {{result}}
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="result1.length > 0">
+    <ion-card-content>
+      <ul>
+        <li>Addition ->  {{ result1[0] }}</li>
+        <li>Subtraction ->  {{ result1[1] }}</li>
+        <li>Multiplication ->  {{ result1[2] }}</li>
+        <li>Division ->  {{ result1[3] }}</li>
+      </ul>
+    </ion-card-content>
+  </ion-card>
+  <ion-button expand="block" (click)="clear()">
+    Clear
+  </ion-button>
+
+</ion-content>

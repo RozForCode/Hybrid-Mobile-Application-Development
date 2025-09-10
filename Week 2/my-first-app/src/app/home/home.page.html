@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>My First App</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h1>Hello {{name}}!</h1>
+  
+  <ion-item>
+    <ion-label position="stacked">Enter your name:</ion-label>
+    <ion-input [(ngModel)]="name" placeholder="Your name"></ion-input>
+  </ion-item>
+  
+  <ion-button expand="block" (click)="showGreeting()">
+    Say Hello
+  </ion-button>
+  <ion-button expand="block" (click)="showTest()">
+    Say Test
+  </ion-button>
+  
+  <ion-card *ngIf="greeting">
+    <ion-card-content>
+      {{greeting}}
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="test">
+    <ion-card-content>
+      {{test}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>
