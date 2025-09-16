@@ -1,0 +1,7 @@
+{
+  "name": "w3-exercise2",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

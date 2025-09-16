@@ -1,0 +1,24 @@
+
+  h2 {
+    margin-bottom: 10px;
+    color: white;
+  }
+
+  p {
+    color:white;
+    margin-bottom: 20px;
+  }
+
+  button {
+    background: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    &:hover {
+      background: #0056b3;
+    }
+  }
+

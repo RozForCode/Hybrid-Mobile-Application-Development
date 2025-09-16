@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <h2>Navigation Demo</h2>
+    
+    <!-- Method 1: routerLink -->
+    <ion-button expand="block" routerLink="/page1">
+      Go to Page 1 (routerLink)
+    </ion-button>
+    
+    <!-- Method 2: router.navigate -->
+    <ion-button expand="block" (click)="goPage1()">
+      Go to Page 1 (router.navigate)
+    </ion-button>
+    <ion-button expand="block" routerLink="/page2">
+      Go to Page 2 (routerLink)
+    </ion-button>
+    
+    <!-- Method 2: router.navigate -->
+    <ion-button expand="block" (click)="goPage2()">
+      Go to Page 2 (router.navigate)
+    </ion-button>
+    
+    <!-- <ion-button expand="block" routerLink="/pages/page2">
+      Go to Page 2
+    </ion-button> -->
+  </div>
+</ion-content>
