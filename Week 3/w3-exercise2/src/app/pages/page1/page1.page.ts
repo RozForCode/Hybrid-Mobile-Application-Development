@@ -7,6 +7,7 @@ import {
   IonTitle, 
   IonContent,
 } from '@ionic/angular/standalone';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-page1',
@@ -22,4 +23,19 @@ import {
     IonContent,
   ]
 })
-export class Page1Page {}
+export class Page1Page {
+  constructor(private route: ActivatedRoute) { }
+
+  title!: string;
+  id!: string | null;
+  ngOnInit() {
+    // this.title = data['title'];
+  this.route.data.subscribe(data => console.log(data['title'])); // 'Page 1'
+  // or using snapshot
+  this.title = this.route.snapshot.data['title'];
+  this.route.paramMap.subscribe(params => {
+  const id = params.get('id'); // 123
+});
+}
+
+}

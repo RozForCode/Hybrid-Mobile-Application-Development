@@ -41,6 +41,7 @@ export const routes: Routes = [
       {
         path: 'page1',
         loadComponent: () => import('./pages/page1/page1.page').then((m) => m.Page1Page),
+        data: { title: 'Static Data Sharing' },
       },
       {
         path: 'page2',
@@ -63,5 +64,9 @@ export const routes: Routes = [
     path: '',
     redirectTo: '/tabs/tab1',
     pathMatch: 'full',
+  },
+  {
+    path: 'page3/:id',
+    loadComponent: () => import('./pages/page3/page3.page').then( m => m.Page3Page)
   },
 ];
