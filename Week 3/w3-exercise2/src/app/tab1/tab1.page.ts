@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class Tab1Page {
   constructor(private router: Router) {}
    goToDetails() {
-      this.router.navigate(['/details', 123]);
+      this.router.navigate(['/page3', 123]);
    }
 
 }

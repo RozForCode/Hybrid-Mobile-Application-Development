@@ -1,0 +1,27 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>📺 Student Display (Receiver)</ion-card-title>
+    <ion-card-subtitle>Shows selected student data</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    <div *ngIf="selectedStudent; else noStudent">
+      <ion-item>
+        <ion-label>ID: {{ selectedStudent.id }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Name: {{ selectedStudent.name }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Age: {{ selectedStudent.age }}</ion-label>
+      </ion-item>
+      <ion-button expand="block" color="danger" (click)="clearSelection()">
+        Clear Selection
+      </ion-button>
+    </div>
+
+    <ng-template #noStudent>
+      <p>No student selected yet.</p>
+    </ng-template>
+  </ion-card-content>
+</ion-card>

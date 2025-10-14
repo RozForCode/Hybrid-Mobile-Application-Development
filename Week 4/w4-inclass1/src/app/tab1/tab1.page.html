@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title >Ionic UI Demo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-picker>
+  <ion-picker-column value="javascript">
+    <ion-picker-column-option value="" disabled="true">--</ion-picker-column-option>
+    <ion-picker-column-option value="javascript">Javascript</ion-picker-column-option>
+    <ion-picker-column-option value="typescript">Typescript</ion-picker-column-option>
+    <ion-picker-column-option value="rust">Rust</ion-picker-column-option>
+    <ion-picker-column-option value="c#">C#</ion-picker-column-option>
+  </ion-picker-column>
+</ion-picker>
+
+
+<ion-button id="present-alert">Click Me</ion-button>
+<ion-alert
+  trigger="present-alert"
+  header="A Short Title Is Best"
+  subHeader="A Sub Header Is Optional"
+  message="A message should be a short, complete sentence."
+  [buttons]="alertButtons"
+></ion-alert>
+
+<ion-content class="ion-padding">
+  <ion-button (click)="presentActionSheet()" expand="block">Open Action Sheet</ion-button>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Card Example</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>This is an Ionic card.</ion-card-content>
+  </ion-card>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Checkbox Example</ion-label>
+      <ion-checkbox></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Radio Example</ion-label>
+      <ion-radio slot="start"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Select Example</ion-label>
+      <ion-select>
+        <ion-select-option value="a">Option A</ion-select-option>
+        <ion-select-option value="b">Option B</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Input Example"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-searchbar></ion-searchbar>
+  <ion-img src="https://ionicframework.com/docs/img/demos/card-media.png"></ion-img>
+</ion-content>

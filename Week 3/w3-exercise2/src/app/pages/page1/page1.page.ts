@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { C2Component } from '../../c2/c2.component';
 import { 
@@ -23,7 +23,7 @@ import { ActivatedRoute } from '@angular/router';
     IonContent,
   ]
 })
-export class Page1Page {
+export class Page1Page implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   title!: string;

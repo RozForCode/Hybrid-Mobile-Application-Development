@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ionic Native Plugins Demo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-button expand="block" (click)="showActionSheet()">Show Action Sheet</ion-button>
+  <ion-button expand="block" (click)="takePhoto()">Take Photo</ion-button>
+  <ion-button expand="block" (click)="getDeviceInfo()">Show Device Info</ion-button>
+  <ion-button expand="block" (click)="showDialog()">Show Dialog</ion-button>
+  <ion-button expand="block" (click)="getNetworkStatus()">Check Network</ion-button>
+  <ion-button expand="block" (click)="hideStatusBar()">Hide Status Bar</ion-button>
+  <ion-button expand="block" (click)="showStatusBar()">Show Status Bar</ion-button>
+  <ion-button expand="block" (click)="showToast()">Show Toast</ion-button>
+
+  <!-- Display Device Info -->
+  <ion-card *ngFor="let entry of deviceInfo">
+    <ion-card-header>
+      <ion-card-subtitle>{{ entry[0] }}</ion-card-subtitle>
+      <ion-card-content>{{ entry[1] }}</ion-card-content>
+    </ion-card-header>
+  </ion-card>
+
+  <!-- Display photo -->
+  <img *ngIf="imageUrl" [src]="imageUrl" alt="Photo" />
+</ion-content>
