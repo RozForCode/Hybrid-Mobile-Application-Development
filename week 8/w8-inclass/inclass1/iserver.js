@@ -11,6 +11,4 @@ res.end();
 console.log(`Server running at
 http://${hostname}:${port}/`);
 }); 27
-Status
-code
-Node.js / In-Class
+
