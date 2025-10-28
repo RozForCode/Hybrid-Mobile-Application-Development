@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { environment } from 'src/environments/environment.prod';
 
 interface WeatherOverview {
   lat: number;
@@ -25,7 +26,7 @@ weather$: Observable<any> = new Observable();
   constructor(private http:HttpClient) { }
 
   getStations() {
-    this.weather$ = this.http.get<WeatherOverview>('https://api.openweathermap.org/data/3.0/onecall/overview?lat=51.253775&lon=-85.323214&appid=286d47ada85fa43c8e2da32e9a0cae44'
+    this.weather$ = this.http.get<WeatherOverview>(environment.API_Key
     );
   }
 
