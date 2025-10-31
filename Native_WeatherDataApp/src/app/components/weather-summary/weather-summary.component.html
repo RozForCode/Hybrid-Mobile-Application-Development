@@ -1,6 +1,10 @@
 <div class="weather-container">
   <h2 class="title">🌌 Weather Summary</h2>
 
+  <button (click)="getCurrentLocation()">Get Location</button>
+  <p *ngIf="latitude && longitude">
+      Latitude from Native API: {{ latitude }}, Longitude from Native API: {{ longitude }}
+  </p>
   <button class="btn-glow" (click)="getStations()">Get Weather Summary</button>
 
   <div *ngIf="weather$ | async as weather" class="weather-card">
@@ -13,4 +17,6 @@
       <p><strong>Forecast:</strong> {{ weather.weather_overview }}</p>
     </div>
   </div>
+  
+
 </div>

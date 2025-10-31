@@ -4,6 +4,8 @@
   </ion-toolbar>
 </ion-header>
 
+
+
 <ion-content [fullscreen]="true" class="details-content ion-padding">
   
   <div *ngIf="selectedData; else noData" class="details-container">
@@ -26,6 +28,7 @@
   </ng-template>
 
   <ion-button expand="block" class="details-btn" (click)="gotoTab2()">Send Message and go to Tab 2</ion-button>
-
+  <ion-button (click)="takePhoto()">Take Photo</ion-button>
+  <img *ngIf="photo" [src]="photo" />
   <app-air-quality></app-air-quality>
 </ion-content>

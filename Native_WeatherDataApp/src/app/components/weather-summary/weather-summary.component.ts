@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { environment } from 'src/environments/environment.prod';
-
+import { Geolocation } from '@capacitor/geolocation';
 interface WeatherOverview {
   lat: number;
   lon: number;
@@ -22,11 +22,23 @@ interface WeatherOverview {
 
 
 export class WeatherSummaryComponent  implements OnInit {
-weather$: Observable<any> = new Observable();
+  latitude: number=0;
+  longitude: number=0;
+  weather$: Observable<any> = new Observable();
   constructor(private http:HttpClient) { }
 
+  async getCurrentLocation() {
+    try {
+      const coordinates = await Geolocation.getCurrentPosition();
+      this.latitude = coordinates.coords.latitude;
+      this.longitude = coordinates.coords.longitude;
+      console.log('Current position:', this.latitude, this.longitude);
+    } catch (err) {
+      console.error('Error getting location:', err);
+    }
+  }
   getStations() {
-    this.weather$ = this.http.get<WeatherOverview>(environment.API_Key);
+    this.weather$ = this.http.get<WeatherOverview>(`https://api.openweathermap.org/data/3.0/onecall/overview?lat=${this.latitude}&lon=${this.longitude}&appid=${environment.apiKey}`);
   }
 
   ngOnInit() {}

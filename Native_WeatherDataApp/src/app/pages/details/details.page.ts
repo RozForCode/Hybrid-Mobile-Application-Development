@@ -6,6 +6,8 @@ import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonLabel, IonIt
 import { DecimalPipe } from '@angular/common';
 import { DataService } from '../../data-service';
 import { AirQualityComponent } from 'src/app/components/air-quality/air-quality.component';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+
 
 @Component({
   selector: 'app-details',
@@ -17,6 +19,7 @@ import { AirQualityComponent } from 'src/app/components/air-quality/air-quality.
 export class DetailsPage implements OnInit {
 
   messageText: string = '';
+  photo: string = '';
   constructor(private router: Router, private messageService:DataService) { }
 
   selectedData: any;
@@ -39,6 +42,20 @@ export class DetailsPage implements OnInit {
     );
     this.router.navigate(['/tabs/tab2']);
   }
+  
+async takePhoto() {
+  try {
+    const image = await Camera.getPhoto({
+      quality: 90,
+      allowEditing: false,
+      resultType: CameraResultType.Base64, // Base64 for displaying easily
+      source: CameraSource.Camera,
+    });
+    this.photo = `data:image/jpeg;base64,${image.base64String}`;
+  } catch (err) {
+    console.error('Error taking photo:', err);
+  }
+}
 
 }
 
