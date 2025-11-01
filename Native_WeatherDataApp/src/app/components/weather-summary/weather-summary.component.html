@@ -1,7 +1,7 @@
 <div class="weather-container">
   <h2 class="title">🌌 Weather Summary</h2>
 
-  <button (click)="getCurrentLocation()">Get Location</button>
+  <button class="btn-glow" (click)="getCurrentLocation()">Get Location</button>
   <p *ngIf="latitude && longitude">
       Latitude from Native API: {{ latitude }}, Longitude from Native API: {{ longitude }}
   </p>

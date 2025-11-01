@@ -9,6 +9,12 @@
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   color: #e0e0e0;
 }
+/* Responsive container */
+@media (max-width: 768px) {
+  .aqhi-container {
+    padding: 1rem; /* reduce side padding */
+  }
+}
 
 .center {
     display: flex;
@@ -22,6 +28,28 @@
   margin-bottom: 1.5rem;
   color: #00ffcc;
   text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+}
+/* Responsive title */
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .aqhi-container {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+.title {
+  font-size: 1.4rem;
+}
+
+  .loading-text {
+    font-size: 1rem;
+  }
 }
 
 /* Searchbar Styling */
