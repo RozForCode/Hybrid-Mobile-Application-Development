@@ -133,20 +133,6 @@ ion-content{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ion-header {
     height: 90px; /* makes header taller */
 }
@@ -169,4 +155,84 @@ ion-title {
   color:  #00ffcc;;
   //  text-shadow: 0 0 4px #66ccff, 0 0 8px #66ccff;
   text-align: center;
+}
+
+
+
+/* 🌟 MOBILE OPTIMIZATION 🌟 */
+@media (max-width: 768px) {
+  ion-content {
+    padding: 1rem;
+  }
+
+  .message-box {
+    font-size: 1rem;
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .table-heading {
+    font-size: 1.8rem;
+  }
+
+  .neon-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .full-width-btn {
+    width: 90%;
+    height: 3.2rem;
+  }
+
+  .full-width-table {
+    min-width: unset; /* remove fixed min width */
+    font-size: 0.9rem;
+  }
+
+  .full-width-table-container {
+    padding: 0.5rem;
+    max-height: none;
+  }
+
+  ion-title {
+    font-size: 1.6rem;
+    padding: 0.8rem;
+  }
+
+  ion-header {
+    height: 70px;
+  }
+
+  .mat-header-cell,
+  .mat-cell {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* 🌟 EXTRA SMALL DEVICES 🌟 */
+@media (max-width: 480px) {
+  .table-heading {
+    font-size: 1.5rem;
+  }
+
+  .message-box {
+    margin: 0.5rem;
+    padding: 0.8rem;
+  }
+
+  .neon-btn {
+    width: 100%;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  ion-title {
+    font-size: 1.3rem;
+  }
+
+  ion-content {
+    padding: 0.8rem;
+  }
 }

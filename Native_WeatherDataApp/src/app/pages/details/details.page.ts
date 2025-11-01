@@ -37,7 +37,9 @@ export class DetailsPage implements OnInit {
       `
   <p><strong>Details sent to the User:</strong></p>
   <pre>${JSON.stringify(this.selectedData, null, 2)}</pre>
-  <p><strong>User's Comment about the data:</strong> ${this.messageText}</p>
+  <p><strong>User's Comment about the data:</strong> <span style="color:red">${this.messageText}</span></p>
+  <p>User Image:</p>
+  <img src="${this.photo}" style="max-width: 100%; border-radius: 10px;">
   `
     );
     this.router.navigate(['/tabs/tab2']);

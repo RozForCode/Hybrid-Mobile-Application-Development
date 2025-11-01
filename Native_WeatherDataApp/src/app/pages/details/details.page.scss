@@ -1,20 +1,35 @@
-.btn-glow {
-  background: #00e0ff;
-  border: none;
+ion-button.btn-glow {
+  --background: transparent; /* disable ionic's bg */
+  --border-radius: 30px;
+  --box-shadow: none;
+  --ripple-color: transparent;
+
+  background: #00e0ff; /* your glow color */
   color: #0f2027;
+  border: none;
   padding: 0.8rem 1.5rem;
-  border-radius: 30px;
   font-size: 1rem;
   font-weight: bold;
-  cursor: pointer;
-  margin-bottom: 2rem;
-  transition: all 0.3s ease;
+  text-transform: none;
+  border-radius: 30px;
   box-shadow: 0 0 15px #00e0ff, 0 0 30px #00e0ff inset;
+  transition: all 0.3s ease;
+  margin-bottom: 1.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.btn-glow:hover {
+ion-button.btn-glow:hover {
   transform: scale(1.05);
   box-shadow: 0 0 25px #00e0ff, 0 0 50px #00e0ff inset;
+}
+
+/* Optional: make it look consistent across devices */
+ion-button.btn-glow::part(native) {
+  background: transparent !important; /* deeper override for ionic internals */
+  box-shadow: none !important;
 }
 
 /* Details Page Header */
@@ -104,17 +119,17 @@ text-align: center;
 }
 
 /* Button */
-.details-btn {
-background: #00ffcc;
-color: #0f2027;
-font-weight: bold;
-border-radius: 25px;
-text-align: center;
-box-shadow: 0 0 12px #00ffcc, 0 0 25px #00ffcc inset;
-transition: all 0.3s ease;
-}
+// .details-btn {
+// background: #00ffcc;
+// color: #0f2027;
+// font-weight: bold;
+// border-radius: 25px;
+// text-align: center;
+// box-shadow: 0 0 12px #00ffcc, 0 0 25px #00ffcc inset;
+// transition: all 0.3s ease;
+// }
 
-.details-btn:hover {
-transform: scale(1.03);
-box-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc inset;
-}
+// .details-btn:hover {
+// transform: scale(1.03);
+// box-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc inset;
+// }
